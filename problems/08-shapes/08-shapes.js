@@ -36,6 +36,8 @@ function printShape(shape, height, character) {
         
       }
       break;
+
+
     case("Square"):
       for(let i  = 0; i<height; i++){
         lineToPrint = ""
@@ -46,23 +48,86 @@ function printShape(shape, height, character) {
         
       }
       break;
+
+
+
     case("Diamond"):
-    for(let i  = 0; i<height; i++){
-      lineToPrint = ""
-      for(let j  = 0; j<height; j++){
-        if(j=height-i){
-          lineToPrint += character
-        }else{
+
+    //commented code prints double width and does not print first line
+      /*width = height/2
+    
+      //top
+      for(let i = 0; i<height/2; i++){
+        lineToPrint = ""
+        for(let j=0; j< width-1; j++){
           lineToPrint += " "
         }
+        for(let j=width; j<(height-width); j++){
+          lineToPrint += character
+        }
+        
+        console.log(lineToPrint);
+        width--;
       }
-      console.log(lineToPrint);
-      
-    }
-    break;
+      console.log(" ");
+      height -= 2
+      width = (height)/2
+      for(let i = 0; i<height/2; i++){
+        lineToPrint = ""
+        for(let j=width-1; j<(height-width)/2; j++){
+          lineToPrint += " "
+        }
+        for(let j=0; j< width; j++){
+          lineToPrint += character
+          lineToPrint += character
+          
+        }
+        console.log(lineToPrint);
+        
+        width--;
+      }
+      */
+
+      width = 1
+      while(width != height-1){
+        lineToPrint = ""
+        for(let i = width-1; i<(height-width)/2; i++){
+          lineToPrint += " "
+        }
+        for(let j = 0; j<width; j++){
+          lineToPrint += character;
+        }
+        for(let j = 1; j<width; j++){
+          lineToPrint += character;
+        }
+        console.log(lineToPrint);
+        width++
+      }
+      width--
+      while(width != 0){
+        lineToPrint = ""
+        for(let i = width-1; i<(height-width)/2; i++){
+          lineToPrint += " "
+        }
+        for(let j = 0; j<width; j++){
+          lineToPrint += character;
+        }
+        for(let j = 1; j<width; j++){
+          lineToPrint += character;
+        }
+        console.log(lineToPrint);
+        width--
+      }
+
+
+      break;
   }
 }
 
+
 printShape("Square", 3, "-")
-printShape("Triangle", 3, "-")
-//printShape("Diamond", 3, "-")
+console.log("");
+printShape("Triangle", 20, "*")
+console.log("");
+printShape("Diamond", 5, "s")
+console.log("");
