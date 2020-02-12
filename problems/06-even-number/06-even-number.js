@@ -2,15 +2,13 @@
 Define function: isEven(someNum)
 Return true if even, false if odd.
 Do not use % operator. */
+
 function isEven(someNum) {
-    if(typeof(someNum) == Number || someNum){
-        while(someNum!= 1 || someNum != 0 || someNum<=1 ){
-            someNum = someNum/2
-        }
+    if(Number.isInteger(someNum/2)){
+        return true
     }
-  if(someNum== 1 || someNum== 0 || someNum<=1 ){
-      console.log(someNum)
-  }
+    return false
+    
 }
-//come back to this
-isEven(4)
+console.log(isEven(25));
+
